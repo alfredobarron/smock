@@ -10,7 +10,7 @@
     "ENGLISH": "English",
     "SPANISH": "Spanish",
 
-    "SLOGAN": "Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3",
+    "SLOGAN": "Smoke is the most complete jQuery Plugin and designed used with Bootstrap 3",
     "DOWNLOAD": "Download",
 
     "FEATURES": "FEATURES",
@@ -27,13 +27,13 @@
 
 
 
-    "GETTING-STARTED-DESC": "An overview of Smoke, how to download and use.",
+    "GETTING-STARTED-DESC": "An overview of Smoke, how to download and to use.",
 
-    "DOWNLOAD-DESC": "Download Smoke and add it to your proyect, It's simple and quick of use.",
+    "DOWNLOAD-DESC": "Download Smoke and add it to your project, it's simple and quick to use.",
 
     "INSTALL": "Install with",
 
-    "WHATS-INCLUDED": "Whats included",
+    "WHATS-INCLUDED": "What's included",
     "WHATS-INCLUDED-DESC": "Once downloaded, unzip the .zip file to see the structure of Smoke. You will see something like this:",
 
     "REQUIRED": "Required",
@@ -52,7 +52,7 @@
     "VALIDATE-DESC": "It makes the form validation on client side easy, simple and safer.",
 
     "INPUT-EMPTY": "Empty input",
-    "INPUT-EMPTY-DESC": "To validate a field that is mandatory only have to add the <code> required </ code> attribute within the <code> input </ code> . The field types supported so far are <code> text </ code>, <code> textarea </ code>, <code> email </ code>, <code> password </ code>, <code> select </ code>, <code> radio </ code> and <code> checkbox </ code>. The function used to validate is <span class = 'text-success'> smkValidate () </ span>.",
+    "INPUT-EMPTY-DESC": "To validate a field that is mandatory you only have to add the <code> required </ code> attribute within the <code> input </ code> . The field types supported so far are <code> text </ code>, <code> textarea </ code>, <code> email </ code>, <code> password </ code>, <code> select </ code>, <code> radio </ code> and <code> checkbox </ code>. The function used to validate is <span class = 'text-success'> smkValidate () </ span>.",
     "INPUT-EMPTY-NOTE": "It is necessary that the <code> input </ code> to validate is inside a <code> div </ code> with the <code> form-group </ code> class",
 
     "INPUT-EMAIL": "Email input ",
@@ -79,7 +79,7 @@
     "RANGE-CHARACTER": "Range character",
     "RANGE-CHARACTER-DESC": "To validate a field that only accepts a range of a number of characters, add the <code> required </ code> attribute within the <code> input </ code> tag. Likewise add <code> minLength </ code> and <code> maxlength </ code> attributes, and within these, the range of number of characters allowed.",
 
-    "STRONG-PASSWORD": "Strong password",
+    "STRONG-PASSWORD": "Password strength",
     "STRONG-PASSWORD-DESC": "To validate a field that accepts only a strong and secure password, the field must be of type <code> password </ code>, add the <code> required </ code> attribute in the <code> input </ code > tag and finally add the <code> smk-strongPass </ code> attribute and within this, the hard level required.",
     "STRONG-PASSWORD-TB": {
         "DESC": "Description",
@@ -92,25 +92,26 @@
     },
 
     "EQUAL-PASSWORD": "Equal password",
-    "EQUAL-PASSWORD-DESC": "To validate the texts contained in two fields are equal, Add the <code> required </ code> attribute within the etiquette <code> input </ code> in the first field. The function used is <span class = 'text-success'> $. SmkEqualPass () </ span>. ",
+    "EQUAL-PASSWORD-DESC": "To validate the texts contained in two fields are equal, add the <code> required </ code> attribute within the etiquette <code> input </ code> in the first field. The function used is <span class = 'text-success'> $. SmkEqualPass () </ span>. ",
 
     "EQUAL-PASSWORD-VAR": "Equal password var",
     "EQUAL-PASSWORD-VAR-DESC": "To validate that the text content of a field is equal to the value of a JavaScript variable, add the <code> required </ code> attribute within the etiquette <code> input </ code> . The function used is <span class = 'text-success'> $. SmkEqualPass () </ span>. ",
 
     "CLEAR-FORM": "Clear form",
-    "CLEAR-FORM-DESC": "To clean forms use the <span class = 'text-success'> smkClear () </ span> function. For not cleaning one or more types of fields, use the option <span class = 'text-primary'> noClear </ span> within the function. ",
+    "CLEAR-FORM-DESC": "To clear forms use the <span class = 'text-success'> smkClear () </ span> function. For not cleaning one or more types of fields, use the option <span class = 'text-primary'> noClear </ span> within the function. ",
 
     "CUSTOMIZE-MESSAGE": "Customize message",
     "CUSTOMIZE-MESSAGE-DESC": "Customize the error message by adding the <code> smk-text </ code> within the etiquette <code> input </ code> ",
 
     "LANGUAGE": "Language",
-    "LANGUAGE-DESC": "To change the language of validation messages, Add in the html the needed script and then, the language is passed into the <code> lang </ code> option in the <span class = 'text-success'> smkValidate () </ span>. funtion. ",
+    "LANGUAGE-DESC": "To change the language of validation messages, add in the html the needed script and then the language is passed into the <code> lang </ code> option in the <span class = 'text-success'> smkValidate () </ span>. funtion. ",
     "LANGUAGE-TB": {
         "TITLE": "supported Languages",
         "LANGUAGE": "Language",
         "LANGUAGES": {
             "ENGLISH": "English",
-            "SPANISH": "Spanish"
+            "SPANISH": "Spanish",
+			"GERMAN": "German"
         },
         "ARCHIVE": "Archive"
     },
@@ -122,7 +123,7 @@
     "DESCRIPTION":"Description",
 
 
-    "NOTIFICATIONS-DESC": "Create funcional and coloful Alert or confirmations messages and its use is as simple as the natives of javascript.",
+    "NOTIFICATIONS-DESC": "Create functional and colorful alert or confirmation messages and use them as simple as the natives of javascript.",
 
     "ALERTS": "Alerts",
     "ALERTS-DESC": "It provides alert messages for the typical user actions when invoking an event.",
@@ -142,8 +143,8 @@
         "DESC": "Customize the confirmations, changing the message and the text on the buttons.",
         "DESCS": {
             "TEXT":"Message",
-            "ACCEPT":"Text of the Confirmation button",
-            "CANCEL":"Text of the Cancel button"
+            "ACCEPT":"Text of the confirmation button",
+            "CANCEL":"Text of the cancel button"
         }
     },
 
@@ -155,22 +156,22 @@
     "PROGRESSBAR-TB": {
         "DESC": "Customize the element in which the progress bar will be added. Define when it starts and when it finishes.",
         "DESCS": {
-            "ELEMENT": "Element which will add the progressBar",
+            "ELEMENT": "The element in which the progressbar appears",
             "STATUS": "When it starts and when finishes"
         }
     },
 
 
 
-    "FULLSCREEN-DESC": "Add Fullscreen Functionality to your application.",
-    "FULLSCREEN-DESC2": "To add full-screen button is only necessary to indicate to the function which will be its container.",
+    "FULLSCREEN-DESC": "Add fullscreen functionality to your application.",
+    "FULLSCREEN-DESC2": "To establish the fullscreen button you only have to indicate on which element will be shown fullscreen. (Hint: try a div or an image... works also...)",
 
 
 
     "PANEL-DESC": "Add functionality to your panels",
     "PANEL-DESC2": "Add functionality to your panels, minimizing,expanding or removing them.",
     "PANEL-TB": {
-        "DESC": "Customize the buttons that you want to show.",
+        "DESC": "Customize the buttons that you want to hide (default: all visible).",
         "DESCS": {
             "HIDE": "hidden buttons"
         }
@@ -178,22 +179,22 @@
 
 
 
-    "HELPERS-DESC": "Collection of helper functions.",
+    "HELPERS-DESC": "Helper functions.",
 
     "STRING-FLOAT": "String to float",
-    "STRING-FLOAT-DESC": "Converts a string to a float value.",
+    "STRING-FLOAT-DESC": "Converts a string to float.",
 
     "NUMBER-CURRENCY": "Currency format",
     "NUMBER-CURRENCY-DESC": "Converts a number to currency format.",
-    "NUMBER-CURRENCY-NOTE": "This function takes two parameters, the first is the number to be formatted and the second is the prefix or the currency.",
+    "NUMBER-CURRENCY-NOTE": "This function takes two parameters. The first is the number to be formatted, the second is the symbol of the currency.",
 
     "URL-DESC": "Get URL.",
-    "URL-NOTE": "This function takes a parameter (optional) is the number of folders to get  the URL after.",
+    "URL-NOTE": "Returns the actual URL of the site where the user is on.",
 
 
     "DATE": "Date",
     "DATE-DESC": "With this function you can get, format, translate and customize dates",
-    "DATE-NOTE": "To change the language of the date, Add the script of the language in your HTML.",
+    "DATE-NOTE": "To change the language of the date, add the script of the language in your HTML.",
     "DATE-TB": {
         "DEFAULT": {
             "DATE": "Current Date"
