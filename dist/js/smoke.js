@@ -563,7 +563,6 @@ $.smokeCustomizeText = function(text, arrayText){
 |   Alerts
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
-var smkAlertInizialize = 0;
 // Se crea la funcion smkAlert
 $.smkAlert = function(options) {
 
@@ -588,19 +587,19 @@ $.smkAlert = function(options) {
     switch (settings.type) {
     case 'warning':
         settings.type = 'alert-warning';
-        settings.icon = 'glyphicon-exclamation-sign';
+        if (settings.icon === '') settings.icon = 'glyphicon-exclamation-sign';
         break;
     case 'success':
         settings.type = 'alert-success';
-        settings.icon = 'glyphicon-ok-sign';
+        if (settings.icon === '') settings.icon = 'glyphicon-ok-sign';
         break;
     case 'danger':
         settings.type = 'alert-danger';
-        settings.icon = 'glyphicon-remove-sign';
+        if (settings.icon === '') settings.icon = 'glyphicon-remove-sign';
         break;
     case 'info':
         settings.type = 'alert-info';
-        settings.icon = 'glyphicon-info-sign';
+        if (settings.icon === '') settings.icon = 'glyphicon-info-sign';
         break;
     }
 
