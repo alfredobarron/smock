@@ -168,15 +168,19 @@
     top: 0;
     width: 100%;
     height: 100%;
+    border-radius: 0;
     z-index: 2050;
 }
-.smk-btn-group-panel-title{
-    top:-22px;
-    right: -4px
+.panel-full>.panel-heading{
+    border-radius: 0;
 }
-.smk-btn-group-panel{
-    top:-4px;
-    right: -4px
+a.smk-min,
+a.smk-min:focus,
+a.smk-remove,
+a.smk-remove:focus,
+a.smk-full,
+a.smk-full:focus {
+	color: inherit;
 }
 
 
