@@ -736,9 +736,9 @@ $.smkPrompt = function(options, callback) {
     }, 400, function(){ 
         $('.smk-prompt input[type="text"]').focus(); 
     }).on('keydown', function(e) {
-        if (e.which === $.ui.keyCode.ESCAPE) {
+        if (e.which === 27) {
             $('.smk-cancel').click();
-        } else if (e.which === $.ui.keyCode.ENTER) {
+        } else if (e.which === 13) {
             if (!$('.smk-accept').is(":focus"))
                 $('.smk-accept').click();
         }
