@@ -1104,15 +1104,16 @@ $.smkProgressBar = function(options) {
 $.fn.smkFullscreen = function() {
 
     // Se crea el boton fullscreen
-    var btnFullscreen = '<a class="btn smk-fullscreen" href="#" data-toggle="tooltip" data-placement="bottom" title="Fullscreen"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>';
+    var btnFullscreen = '<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>';
 
     // Se agrega el boton fullscreen en el elemento
-    $(this).append(btnFullscreen);
+    $(this).addClass('smk-fullscreen').html(btnFullscreen);
 
     // Evento del boton fullscreen
-    $('.smk-fullscreen').click(function(event) {
+    $(this).click(function(event) {
         event.preventDefault();
         toggleFullScreen();
+        $('.smk-fullscreen > .glyphicon').toggleClass('glyphicon-fullscreen').toggleClass('glyphicon-resize-small');
     });
 
     // Se crea el metodo que dispara el fullscreen
@@ -1140,21 +1141,11 @@ $.fn.smkFullscreen = function() {
       }
     }
 
-    // Se crea el metodo que cambia el icono del boton
-    var changeFullscreen = function(){
-        $('.smk-fullscreen').children('.glyphicon').toggleClass('glyphicon-fullscreen').toggleClass('glyphicon-resize-small');
-    };
-
-    // Se escuchan los cambios del fullscreen
-    document.addEventListener("fullscreenchange", changeFullscreen, false);
-    document.addEventListener("msfullscreenchange", changeFullscreen, false);
-    document.addEventListener("mozfullscreenchange", changeFullscreen, false);
-    document.addEventListener("webkitfullscreenchange", changeFullscreen, false);
 };
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
-|   $('div').smkFullscreen();
+|   $('a#fullscreen').smkFullscreen();
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
