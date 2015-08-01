@@ -723,12 +723,12 @@ $.smkPrompt = function(options, callback) {
     // Variables default
     var settings = $.extend({
         text: 'Introducir un valor',
-        defaultText: '',
+        defaultValue: '',
         accept: 'Ok',
         cancel: 'Cancelar'
     }, options);
     // Se agrega el panel de confirmacion en el body
-    $('body').append('<div class="smk-prompt-back"><div class="panel panel-default smk-prompt" tabindex="1"><div class="panel-body"><div class="form-group"><label for="smkPromptInput">' + settings.text + '</label><input class="form-control" id="smkPromptInput" autocomplete="off" type="text" value="' + settings.defaultText + '"></div></div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >' + settings.cancel + '</a> <a class="btn btn-primary btn-sm smk-accept" href="#">' + settings.accept + '</a></div></div></div>');
+    $('body').append('<div class="smk-prompt-back"><div class="panel panel-default smk-prompt" tabindex="1"><div class="panel-body"><div class="form-group"><label for="smkPromptInput">' + settings.text + '</label><input class="form-control" id="smkPromptInput" autocomplete="off" type="text" value="' + settings.defaultValue + '"></div></div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >' + settings.cancel + '</a> <a class="btn btn-primary btn-sm smk-accept" href="#">' + settings.accept + '</a></div></div></div>');
     // Se aplica la animacion de entrada del panel de confirmacion
     $('.smk-prompt').animate({
         top: "-5px",
@@ -774,7 +774,7 @@ $.smkPrompt = function(options, callback) {
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Usage
-|   $.smkPrompt({text: 'What is your name?', defaultText: 'Carl', accept: 'Ok', cancel: 'Cancel'}, function(ret){});
+|   $.smkPrompt({text: 'What is your name?', defaultValue: 'Carl', accept: 'Ok', cancel: 'Cancel'}, function(ret){});
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
