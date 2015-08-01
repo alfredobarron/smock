@@ -580,9 +580,14 @@ $.smkAlert = function(options) {
     var smk_alert_content_class = 'smk-alert-content';
     var available_positions = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'];
     
+    console.log(settings.position);
+    
     if (settings.position !== '' && $.inArray(settings.position, available_positions)){
         smk_alert_content_class += '-' + settings.position;
     }
+    
+    console.log($.inArray(settings.position, available_positions));
+    console.log(smk_alert_content_class);
 
     // Se compara el tipo de alerta y se asigna la clase
     switch (settings.type) {
