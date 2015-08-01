@@ -1177,16 +1177,19 @@ $.fn.smkPanel = function(options) {
     // Se quiebra la variable hideSinEspacios para obtener sus valores y se agregan en el array arrayHide
     var arrayHide = hideSinEspacios.split(',');
     // Se obtiene el .panel-title de cada panel
-    var panelHeading = $(this).children('.panel-heading').children('.panel-title');
-    var smkBtnGroupPanel = '';
-    if(panelHeading.length > 0){
-        smkBtnGroupPanel = 'smk-btn-group-panel-title';
-    }else{
-        smkBtnGroupPanel = 'smk-btn-group-panel';
+    var panelHeading = $(this).children('.panel-heading');
+    if (!panelHeading.length){
+    	panelHeading = $("<div>", {class: 'panel-heading'});
+    	$(this).prepend(panelHeading);
+    }
+    var panelTitle = panelHeading.children('.panel-title');
+    panelHeading.addClass('clearfix');
+    if(panelTitle.length){
+        panelTitle.addClass('pull-left');
     }
 
     // Se crea el btn-group
-    var btnGroup = '<div class="btn-group btn-group-sm pull-right ' + smkBtnGroupPanel + '" role="group">';
+    var btnGroup = '<div class="btn-group btn-group-xs pull-right" role="group">';
     // Se valida que no exista en el array el boton min para poder agregarlo dentro de btnGroup
     if($.inArray('min', arrayHide) == -1){
         btnGroup += '<a class="btn smk-min" href="#"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>';
