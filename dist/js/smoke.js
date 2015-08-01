@@ -716,6 +716,74 @@ $.smkConfirm = function(options, callback) {
 
 /*
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Prompt
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+$.smkPrompt = function(options, callback) {
+    // Variables default
+    var settings = $.extend({
+        text: 'Introducir un valor',
+        defaultValue: '',
+        accept: 'Ok',
+        cancel: 'Cancelar'
+    }, options);
+    // Se agrega el panel de confirmacion en el body
+    $('body').append('<div class="smk-prompt-back"><div class="panel panel-default smk-prompt" tabindex="1"><div class="panel-body"><div class="form-group"><label for="smkPromptInput">' + settings.text + '</label><input class="form-control" id="smkPromptInput" autocomplete="off" type="text" value="' + settings.defaultValue + '"></div></div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >' + settings.cancel + '</a> <a class="btn btn-primary btn-sm smk-accept" href="#">' + settings.accept + '</a></div></div></div>');
+    // Se aplica la animacion de entrada del panel de confirmacion
+    $('.smk-prompt').animate({
+        top: "-5px",
+        opacity: '1'
+    }, 400, function(){ 
+        $('.smk-prompt input[type="text"]').focus().select(); 
+    }).on('keydown', function(e) {
+        if (e.which === 27) {
+            $('.smk-cancel').click();
+        } else if (e.which === 13) {
+            if (!$('.smk-accept').is(":focus"))
+                $('.smk-accept').click();
+        }
+    });
+    // Si se presiona el boton .smk-cancel se retorna false
+    $('.smk-cancel').click(function(e) {
+        e.preventDefault();
+        smkConfirmHide();
+        //return false;
+        callback(false);
+    });
+    // Si se presiona el boton .smk-accept se retorna true or false
+    $('.smk-accept').click(function(e) {
+        e.preventDefault();
+        smkConfirmHide();
+        //return the value;
+        var ret = ($('.smk-prompt-back input').val() !== '') ? $('.smk-prompt-back input').val() : false;
+        callback(ret);
+    });
+    // Se remueve el panel de confirmacion del body
+    function smkConfirmHide(){
+        $('.smk-prompt-back').fadeOut(200, function() {
+            $('.smk-prompt-back').remove();
+        });
+        $('.smk-prompt').animate({
+            top: "-500px",
+            opacity: '0'
+        }, 400, function() {
+            $('.smk-prompt').remove();
+        });
+    }
+};
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+|   Usage
+|   $.smkPrompt({text: 'What is your name?', defaultValue: 'Carl', accept: 'Ok', cancel: 'Cancel'}, function(ret){});
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+
+
+
+
+/*
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 |   Float
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
