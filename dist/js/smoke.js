@@ -734,7 +734,7 @@ $.smkPrompt = function(options, callback) {
         top: "-5px",
         opacity: '1'
     }, 400, function(){ 
-        $('.smk-prompt input[type="text"]').focus(); 
+        $('.smk-prompt input[type="text"]').focus().select(); 
     }).on('keydown', function(e) {
         if (e.which === 27) {
             $('.smk-cancel').click();
