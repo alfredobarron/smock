@@ -110,7 +110,16 @@
     -webkit-box-shadow: 0 5px 25px -1px #333; /* Chrome & Safari */
     -moz-box-shadow: 0 5px 25px -1px #333; /* Firefox */
 }
-
+.smk-confirm:focus {
+    outline: 0;
+    box-shadow: 0 5px 25px -1px #333;
+    -webkit-box-shadow: 0 5px 25px -1px #333; /* Chrome & Safari */
+    -moz-box-shadow: 0 5px 25px -1px #333; /* Firefox */
+}
+.smk-confirm .panel-body {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
 
 
 
