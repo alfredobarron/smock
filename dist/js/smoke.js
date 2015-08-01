@@ -667,12 +667,21 @@ $.smkConfirm = function(options, callback) {
         cancel: 'Cancelar'
     }, options);
     // Se agrega el panel de confirmacion en el body
-    $('body').append('<div class="smk-confirm-back"><div class="panel panel-default smk-confirm"><div class="panel-body"><br>' + settings.text + '<br><br></div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >' + settings.cancel + '</a> <a class="btn btn-primary btn-sm smk-accept" href="#">' + settings.accept + '</a></div></div></div>');
+    $('body').append('<div class="smk-confirm-back"><div class="panel panel-default smk-confirm" tabindex="1"><div class="panel-body">' + settings.text + '</div><div class="panel-footer text-right"><a class="btn btn-default btn-sm smk-cancel" href="#" >' + settings.cancel + '</a> <a class="btn btn-primary btn-sm smk-accept" href="#">' + settings.accept + '</a></div></div></div>');
     // Se aplica la animacion de entrada del panel de confirmacion
     $('.smk-confirm').animate({
         top: "-5px",
         opacity: '1'
-    }, 400);
+    }, 400, function(){ 
+        $('.smk-confirm').focus(); 
+    }).on('keydown', function(e) {
+        if (e.which === 27) {
+            $('.smk-cancel').click();
+        } else if (e.which === 13) {
+            if (!$('.smk-accept').is(":focus"))
+                $('.smk-accept').click();
+        }
+    });
     // Si se presiona el boton .smk-cancel se retorna false
     $('.smk-cancel').click(function(e) {
         e.preventDefault();
