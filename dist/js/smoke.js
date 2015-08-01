@@ -573,10 +573,16 @@ $.smkAlert = function(options) {
         type: 'warning',
         icon: 'glyphicon-exclamation-sign',
         time: 5,
-        permanent: false
+        permanent: false,
+        position: ''
     }, options);
 
-    smkAlertInizialize++;
+    var smk_alert_content_class = 'smk-alert-content';
+    var available_positions = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'];
+    
+    if (settings.position !== '' && $.inArray(settings.position, available_positions)){
+        smk_alert_content_class += '-' + settings.position;
+    }
 
     // Se compara el tipo de alerta y se asigna la clase
     switch (settings.type) {
@@ -599,13 +605,13 @@ $.smkAlert = function(options) {
     }
 
     // Se agrega el contenedor de las alertas en el body
-    if(smkAlertInizialize == 1){
-        $('body').append('<div class="smk-alert-content"></div>');
+    if(!$('body > .' + smk_alert_content_class).length){
+        $('body').append('<div class="' + smk_alert_content_class + '"></div>');
     }
     // Se crea la alerta en el contenedor
     var obj = $('<div class="alert alert-dismissable ' + settings.type + ' smk-alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span class="glyphicon ' + settings.icon + '"></span><p>' + settings.text + '</p></div>');
 
-    $('.smk-alert-content').prepend(obj);
+    $('.' + smk_alert_content_class).prepend(obj);
 
     // Se aplica la animación de entrada a la alerta
     obj.animate({
