@@ -4,14 +4,9 @@
 ![Version](https://img.shields.io/bower/v/smoke.svg)
 ![Version](https://img.shields.io/npm/v/smokejs.svg)
 
+Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3.
 
-
-Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3
-
-
-
-To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
-
+To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/).
 
 ## Table of contents
 
@@ -23,9 +18,6 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
  - [Creators](#creators)
  - [Collaborators](#collaborators)
  - [Copyright and license](#copyright-and-license)
-
-
-
 
 ## Quick start
 
@@ -76,17 +68,14 @@ If you want to making changes Better avoid working directly on the master branch
 
 [@AlfredoBarronC](https://twitter.com/AlfredoBarronC)
 
-
-
 ##Collaborators
 
 - [+MisaelRojas](https://plus.google.com/+MisaelRojas)
+- [@iamryandrake](https://github.com/iamryandrake)
 - [@mostrosonido](https://twitter.com/mostrosonido)
 - [@sdhp](https://github.com/sdhp)
 - [@LespiletteMaxime](https://github.com/LespiletteMaxime)
 - [@druzza](https://github.com/druzza)
-
-
 
 ##Copyright and license
 
