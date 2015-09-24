@@ -10,7 +10,7 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
 
 ## Table of contents
 
- - [Quick start](#quick-start)
+ - [Quick Start](#quick-start)
  - [Required](#required)
  - [Documentation](#documentation)
  - [How to Contribute](#how-to-contribute)
@@ -19,7 +19,7 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
  - [Collaborators](#collaborators)
  - [Copyright and License](#copyright-and-license)
 
-## Quick start
+## Quick Start
 
 Several quick start options are available:
 
