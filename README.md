@@ -4,67 +4,52 @@
 ![Version](https://img.shields.io/bower/v/smoke.svg)
 ![Version](https://img.shields.io/npm/v/smokejs.svg)
 
+Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3.
 
-
-Smoke is the most complete jQuery Plugin and designed for use with Bootstrap 3
-
-
-
-To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
-
+To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/).
 
 ## Table of contents
 
- - [Quick start](#quick-start)
+ - [Quick Start](#quick-start)
  - [Required](#required)
  - [Documentation](#documentation)
- - [How to contribute](#how-to-contribute)
+ - [How to Contribute](#how-to-contribute)
  - [Community](#community)
  - [Creators](#creators)
  - [Collaborators](#collaborators)
- - [Copyright and license](#copyright-and-license)
+ - [Copyright and License](#copyright-and-license)
 
-
-
-
-## Quick start
+## Quick Start
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/alfredobarron/smoke/archive/master.zip)
+- [Download the latest release](https://github.com/alfredobarron/smoke/archive/master.zip).
 - Clone the repo: `git clone https://github.com/alfredobarron/smoke.git`.
 - Install with [Bower](http://bower.io/): `bower install smoke`.
 - Install with [npm](https://www.npmjs.com): `npm install smokejs`.
 
-
-Read the [Getting started page](http://alfredobarron.github.io/smoke/#/getting-started) for information on the plugin contents.
-
-
+Read the ['Getting Started' page](http://alfredobarron.github.io/smoke/#/getting-started) for information on the plugin contents.
 
 ##Required
 
-Smoke plugin requires the [Jquery](http://jquery.com/) library and [Bootstrap 3.](http://getbootstrap.com/) framework.
-
-
+Smoke plugin requires the [jQuery](http://jquery.com/) library and [Bootstrap 3](http://getbootstrap.com/) framework.
 
 ##Documentation
 
-Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
+If you'd like to read the documentation, you can do so here: [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/).
 
-##How to contribute
+##How to Contribute
 
-All contributions are very welcome, We love it. There are several ways to help out:
+We love contributions and all pull requests are welcome. There are several ways to help out:
 
-- Create an issue on GitHub, if you have found a bug
+- If you have found a bug, please create an issue on GitHub
 - Write test cases for open bug issues
-- Write patches for open bug/feature issues, preferably with test cases included
+- Write patches for open bug/feature issues (Bonus points if you can include test cases with your code!)
 - Contribute to the documentation
 
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
 
-
-If you want to making changes Better avoid working directly on the master branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/alfredobarron/smoke/tree/dev).
-
+If you want to contribute changes, it's best to avoid working directly on the ```master``` branch. We recommend working on the [`dev`](https://github.com/alfredobarron/smoke/tree/dev) branch to avoid merge conflicts if you're regularly pulling in updates from origin.
 
 ##Community
 
@@ -76,18 +61,15 @@ If you want to making changes Better avoid working directly on the master branch
 
 [@AlfredoBarronC](https://twitter.com/AlfredoBarronC)
 
-
-
 ##Collaborators
 
 - [+MisaelRojas](https://plus.google.com/+MisaelRojas)
+- [@iamryandrake](https://github.com/iamryandrake)
 - [@mostrosonido](https://twitter.com/mostrosonido)
 - [@sdhp](https://github.com/sdhp)
 - [@LespiletteMaxime](https://github.com/LespiletteMaxime)
 - [@druzza](https://github.com/druzza)
 
-
-
-##Copyright and license
+##Copyright and License
 
 Code and documentation (c) Copyright 2015 Alfredo Barron. Code published under [license LGPL](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
