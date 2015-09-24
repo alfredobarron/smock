@@ -43,19 +43,18 @@ Smoke plugin requires the [Jquery](http://jquery.com/) library and [Bootstrap 3.
 
 Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
 
-##How to contribute
+##How to Contribute
 
-All contributions are very welcome, We love it. There are several ways to help out:
+We love contributions and all pull requests are welcome. There are several ways to help out:
 
-- Create an issue on GitHub, if you have found a bug
+- If you have found a bug, please create an issue on GitHub
 - Write test cases for open bug issues
-- Write patches for open bug/feature issues, preferably with test cases included
+- Write patches for open bug/feature issues. Bonus points if you can include test cases with your code!
 - Contribute to the documentation
 
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
 
 If you want to contribute changes, it's best to avoid working directly on the ```master``` branch. We recommend working on the [`dev`](https://github.com/alfredobarron/smoke/tree/dev) branch to avoid merge conflicts if you're regularly pulling in updates from origin.
-
 
 ##Community
 
@@ -76,6 +75,6 @@ If you want to contribute changes, it's best to avoid working directly on the ``
 - [@LespiletteMaxime](https://github.com/LespiletteMaxime)
 - [@druzza](https://github.com/druzza)
 
-##Copyright and license
+##Copyright and License
 
 Code and documentation (c) Copyright 2015 Alfredo Barron. Code published under [license LGPL](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
