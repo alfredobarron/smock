@@ -23,7 +23,7 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/alfredobarron/smoke/archive/master.zip)
+- [Download the latest release](https://github.com/alfredobarron/smoke/archive/master.zip).
 - Clone the repo: `git clone https://github.com/alfredobarron/smoke.git`.
 - Install with [Bower](http://bower.io/): `bower install smoke`.
 - Install with [npm](https://www.npmjs.com): `npm install smokejs`.
@@ -44,7 +44,7 @@ We love contributions and all pull requests are welcome. There are several ways 
 
 - If you have found a bug, please create an issue on GitHub
 - Write test cases for open bug issues
-- Write patches for open bug/feature issues. Bonus points if you can include test cases with your code!
+- Write patches for open bug/feature issues (Bonus points if you can include test cases with your code!)
 - Contribute to the documentation
 
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
