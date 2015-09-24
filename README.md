@@ -13,11 +13,11 @@ To get started, check out [http://alfredobarron.github.io/smoke/#/](http://alfre
  - [Quick start](#quick-start)
  - [Required](#required)
  - [Documentation](#documentation)
- - [How to contribute](#how-to-contribute)
+ - [How to Contribute](#how-to-contribute)
  - [Community](#community)
  - [Creators](#creators)
  - [Collaborators](#collaborators)
- - [Copyright and license](#copyright-and-license)
+ - [Copyright and License](#copyright-and-license)
 
 ## Quick start
 
@@ -28,20 +28,15 @@ Several quick start options are available:
 - Install with [Bower](http://bower.io/): `bower install smoke`.
 - Install with [npm](https://www.npmjs.com): `npm install smokejs`.
 
-
-Read the [Getting started page](http://alfredobarron.github.io/smoke/#/getting-started) for information on the plugin contents.
-
-
+Read the ['Getting Started' page](http://alfredobarron.github.io/smoke/#/getting-started) for information on the plugin contents.
 
 ##Required
 
-Smoke plugin requires the [Jquery](http://jquery.com/) library and [Bootstrap 3.](http://getbootstrap.com/) framework.
-
-
+Smoke plugin requires the [jQuery](http://jquery.com/) library and [Bootstrap 3](http://getbootstrap.com/) framework.
 
 ##Documentation
 
-Documentation can check the [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/)
+If you'd like to read the documentation, you can do so here: [http://alfredobarron.github.io/smoke/#/](http://alfredobarron.github.io/smoke/#/).
 
 ##How to Contribute
 
