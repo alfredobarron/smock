@@ -608,11 +608,23 @@ $.smkAlert = function(options) {
     $('.smk-alert-content').prepend(obj);
 
     // Se aplica la animación de entrada a la alerta
-    obj.animate({
+    var params = {
         opacity: '1',
-        marginTop:'20px',
-
-    }, 300);
+        marginTop: '20px' // Default top location
+    }
+    if (typeof(options.marginTop) !== 'undefined') {
+        params.marginTop = options.marginTop;
+    }
+    if (typeof(options.marginLeft) !== 'undefined') {
+        params.marginLeft = options.marginLeft;
+    }
+    if (typeof(options.marginRight) !== 'undefined') {
+        params.marginRight = options.marginRight;
+    }
+    if (typeof(options.marginBottom) !== 'undefined') {
+        params.marginBottom = options.marginBottom;
+    }
+    obj.animate(params, 300);
 
     // Si el mensaje no es permanente
     if(settings.permanent === false){
