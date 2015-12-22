@@ -110,6 +110,20 @@
       var smkMax = $(v).attr('data-smk-max');
       // Se obtiene el nivel de la fuerza de la contraseña
       var smkStrongPass = $(v).attr('data-smk-strongPass');
+      // Se obtiene el valor pestaña centavos
+      var smkDecimalSeparator = $(v).attr('data-smk-decimal-separator');
+      // Se obtiene el valor pestaña miles
+      var smkThousandSeparator = $(v).attr('data-smk-thousand-separator');
+      
+      //Obtiene las fichas de los valores por defecto de miles y centavos
+      if (typeof(smkDecimalSeparator) === 'undefined'){
+          //Valor por defecto
+          smkDecimalSeparator = '.'; //Default
+      }
+      if (typeof(smkThousandSeparator) === 'undefined'){
+          //Valor por defecto
+          smkThousandSeparator = ','; //Default
+      }
 
       // Se eliminan los mensajes de error
       $.smkRemoveError(input);
@@ -178,8 +192,10 @@
 
         // Se valida el input DECIMAL
         if (smkType === 'decimal') {
-          // Se crea la expresión regular para el input decimal
-          var decimalRegex = /^\d+(?:\.\d{1,4})?$/;
+          // Se crea la expresión regular para el input decimal                   
+          var decimalRegex = (smkDecimalSeparator === ',') ? 
+                             (/^\d+(?:\,\d{1,4})?$/) : 
+                             (/^\d+(?:\.\d{1,4})?$/);          
           // Se valida que el value del input cumpla con la expresión regular
           if (!decimalRegex.test(value)) {
             // Se agrega el mensaje de error
@@ -192,7 +208,9 @@
           // Se crea la expresión regular para el input currency con $ al inicio
           //var currencyRegex = /^\$?(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,2}){0,1}$/;
           // Se crea la expresión regular para el input currency
-          var currencyRegex = /^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/;
+          var currencyRegex = (smkDecimalSeparator === ',' && smkThousandSeparator === '.') ?
+                              (/^(?:\d+|\d{1,3}(?:.\d{3})*)(?:\,\d{1,4}){0,1}$/) : 
+                              (/^(?:\d+|\d{1,3}(?:,\d{3})*)(?:\.\d{1,4}){0,1}$/) ;
           // Se valida que el value del input cumpla con la expresión regular
           if (!currencyRegex.test(value)) {
             // Se agrega el mensaje de error
