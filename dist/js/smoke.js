@@ -117,7 +117,7 @@
       // Se obtiene el value de los input RADIO y/o CHECKBOX
       if (type === 'radio' || type === 'checkbox') {
         // Se obtiene el value del grupo de checks o radios
-        value = $("input[name=" + name + "]:checked").val();
+        value = $("input[name='" + name + "']:checked").val();
       }
 
       // Se validan los INPUTS que son requeridos y estan vacios
