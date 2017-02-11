@@ -251,19 +251,19 @@
           // Se obtiene el nivel de fuerza de la contraseña
           switch (smkStrongPass) {
             case ('weak'):// Debe contener al menos 4 caracteres
-            strongPassRegex = /^(?=.*[a-z0-9])\w{6,}$/;
+            strongPassRegex = /^(?=.*[a-z0-9])[\w\!%.,-]{6,}$/;
             textPass = languaje.textSPassWeak;
             break;
             case ('medium'):// Debe contener al menos 6 caracteres y un numero
-            strongPassRegex = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
+            strongPassRegex = /^(?=.*\d)(?=.*[a-z])[\w\!%.,-]{6,}$/;
             textPass = languaje.textSPassMedium;
             break;
             case ('strong'):// Debe contener al menos 6 caracteres, un numero y una mayúscula
-            strongPassRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+            strongPassRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w\!%.,-]{6,}$/;
             textPass = languaje.textSPassStrong;
             break;
             default:// Debe contener al menos 4 caracteres
-            strongPassRegex = /^(?=.*[a-z0-9])\w{4,}$/;
+            strongPassRegex = /^(?=.*[a-z0-9])[\w\!%.,-]{4,}$/;
             textPass = languaje.textSPassDefault;
           }
           // Se valida que el value del input cumpla con la expresión regular
