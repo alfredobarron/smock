@@ -79,7 +79,7 @@
       this.attr('novalidate', 'novalidate');
     }
 
-    // Se inicializan las variables globales
+    // Este es un indicador para determinar si la validación de todo el formulario tiene éxito
     var result = true;
 
     // Se obtienen todos los inputs
@@ -87,6 +87,8 @@
 
     // Se recorren todos los inputs del formulario
     inputs.each(function(k,v) {
+      // La confirmación de si la verificación de cada campo de entrada ha sido exitosa
+      var judge = true;
       // Se obtiene el objeto input
       var input = $(v);
       // Se obtiene el type
@@ -130,6 +132,8 @@
 
       // Se eliminan los mensajes de error
       $.smkRemoveError(input);
+      // Se eliminan los mensajes de Success
+      $.smkRemoveSuccess(input);
 
       // Se obtiene el value de los input RADIO y/o CHECKBOX
       if (type === 'radio' || type === 'checkbox') {
@@ -141,7 +145,7 @@
       // Se validan los INPUTS que son requeridos y estan vacios
       if (required === 'required' && (value === '' || value === undefined)) {
         // Se agrega el mensaje de error
-        result =  $.smkAddError(input, languaje.textEmpty);
+        judge =  $.smkAddError(input, languaje.textEmpty);
       }
 
       // Si el input no esta vacio
@@ -154,7 +158,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!emailRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textEmail);
+            judge =  $.smkAddError(input, languaje.textEmail);
+          }else{
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -165,7 +171,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!alphanumericRegex.test(value)) {
             // Se agrega el mensaje de error
-            result = $.smkAddError(input, languaje.textAlphanumeric);
+            judge = $.smkAddError(input, languaje.textAlphanumeric);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -176,7 +184,7 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!numberRegex.test(value)) {
             // Se agrega el mensaje de error
-            result = $.smkAddError(input, languaje.textNumber);
+            judge = $.smkAddError(input, languaje.textNumber);
           } else {
 
             // Se valida el input NUMBER RANGE
@@ -187,7 +195,9 @@
                 arrayTextNumberRange[1] = parseInt(smkMax)+1;
                 var textNumberRange = $.smokeCustomizeMsg(languaje.textNumberRange, arrayTextNumberRange);
                 // Se agrega el mensaje de error
-                result = $.smkAddError(input, textNumberRange);
+                judge = $.smkAddError(input, textNumberRange);
+              } else {
+                $.smkAddSuccess(input, '');
               }
             }
 
@@ -202,7 +212,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!decimalRegex.test(value)) {
             // Se agrega el mensaje de error
-            result = $.smkAddError(input, languaje.textDecimal);
+            judge = $.smkAddError(input, languaje.textDecimal);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -216,7 +228,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!currencyRegex.test(value)) {
             // Se agrega el mensaje de error
-            result = $.smkAddError(input, languaje.textCurrency);
+            judge = $.smkAddError(input, languaje.textCurrency);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -228,7 +242,9 @@
               // Se personaliza el mensaje de error
               var textLength = $.smokeCustomizeMsg(languaje.textLength, maxlength);
               // Se agrega el mensaje de error
-              result = $.smkAddError(input, textLength);
+              judge = $.smkAddError(input, textLength);
+            } else {
+              $.smkAddSuccess(input, '');
             }
             // Si contiene ambos y son diferentes
           } else if (minlength !== maxlength) {
@@ -239,7 +255,9 @@
               // Se personaliza el mensaje de error
               var textRange = $.smokeCustomizeMsg(languaje.textRange, arrayTextRange);
               // Se agrega el mensaje de error
-              result = $.smkAddError(input, textRange);
+              judge = $.smkAddError(input, textRange);
+            } else {
+              $.smkAddSuccess(input, '');
             }
           }
         }
@@ -269,7 +287,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!strongPassRegex.test(value)) {
             // Se agrega el mensaje de error
-            result = $.smkAddError(input, textPass);
+            judge = $.smkAddError(input, textPass);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -280,7 +300,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!urlRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textUrl);
+            judge =  $.smkAddError(input, languaje.textUrl);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -291,7 +313,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!telRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textTel);
+            judge =  $.smkAddError(input, languaje.textTel);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -302,7 +326,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!colorRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textColor);
+            judge =  $.smkAddError(input, languaje.textColor);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -313,7 +339,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!dateRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textDate);
+            judge =  $.smkAddError(input, languaje.textDate);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -324,7 +352,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!datetimeRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textDatetime);
+            judge =  $.smkAddError(input, languaje.textDatetime);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -335,7 +365,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!monthRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textMonth);
+            judge =  $.smkAddError(input, languaje.textMonth);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -346,7 +378,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!weekRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textWeek);
+            judge =  $.smkAddError(input, languaje.textWeek);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -357,7 +391,9 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!timeRegex.test(value)) {
             // Se agrega el mensaje de error
-            result =  $.smkAddError(input, languaje.textTime);
+            judge =  $.smkAddError(input, languaje.textTime);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
@@ -368,10 +404,16 @@
           // Se valida que el value del input cumpla con la expresión regular
           if (!patternRegex.test(value)) {
             // Se agrega el mensaje de error
-            result = $.smkAddError(input, languaje.textPattern);
+            judge = $.smkAddError(input, languaje.textPattern);
+          } else {
+            $.smkAddSuccess(input, '');
           }
         }
 
+      } else {
+        if (judge){
+          $.smkAddSuccess(input, '');
+        }
       }
 
       input
@@ -380,6 +422,8 @@
         // Check for validation
         $(this).smkValidate();
       });
+
+      result = result && judge;
 
     });
 
@@ -450,6 +494,8 @@
 
       // Se eliminan los mensajes de error
       $.smkRemoveError(v);
+      // Se Elimina a un mensaje de éxito
+      $.smkRemoveSuccess(v);
 
       // Si el input no contiene el attr data-smk-noclear
       if ( $(v).attr('data-smk-noclear') === undefined ) {
@@ -569,6 +615,64 @@
   };
   /*
   |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  |   Se crea el método que agrega el mensaje de success
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  $.smkAddSuccess = function (obj, message)
+  {
+    // Se obtiene el icono
+    var icon = $(obj).parents('form').attr('data-smk-icon-success');
+    // Se obtiene el elemento form-group
+    var formGroup = $(obj).parents('.form-group');
+    // Se obtiene el elemento padre
+    var parent = $(obj).parent();
+    // Se obtiene el type
+    var type = $(obj).attr('type');
+    // Se obtiene el mensaje de success
+    var smkMsg = $(obj).attr('data-smk-msg-success');
+    // Se crea el template del icono de success
+    var ico = '<span class="glyphicon '+ icon +' form-control-feedback smk-success-icon"></span>';
+
+    // Si type es indefinido se asigna el nombre del tag
+    if(type === undefined) type = $(obj).prop('tagName').toLowerCase();
+
+    // Si el form no contiene icono
+    if (icon === '' || icon === undefined) ico = '';
+
+    // Si el input no contiene mensaje de success se asigna uno
+    if (smkMsg === '' || smkMsg === undefined) smkMsg = message;
+
+    // Se crea el template del mensaje de success
+    var msg = '<span class="help-block smk-success-msg">' + smkMsg + '</span>';
+
+    if(type == 'select'){
+      // Se agrega la clase de success
+      formGroup.addClass('has-feedback has-success smk-' + type);
+      // Se agrega el icono y el mensaje de success
+      formGroup.append(ico + msg);
+    }else if(type == 'checkbox' || type == 'radio'){
+      // Se agrega la clase de success
+      formGroup.addClass('has-feedback has-success smk-' + type);
+      // Se agrega el icono y el mensaje de success
+      formGroup.append(msg);
+    }else{
+      // Se agrega la clase de success
+      formGroup.addClass('has-feedback has-success');
+      // Si el form tiene la clase form-horizontal
+      if (formGroup.parent().hasClass('form-horizontal')) {
+        // Se agrega el icono y el mensaje de success
+        parent.append(ico + msg);
+      } else {
+        // Se agrega el icono y el mensaje de success
+        formGroup.append(ico + msg);
+      }
+    }
+
+    // Se retorna true
+    return true;
+  };
+  /*
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   |   Se crea el método que remueve el mensaje de error
   |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   */
@@ -582,6 +686,22 @@
     parent.removeClass('has-error has-feedback');
     // Se retorna false
     return false;
+  };
+  /*
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  |   Se crea el método que remueve el mensaje de success
+  |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  */
+  $.smkRemoveSuccess = function(obj)
+  {
+    // Se obtiene el elemento padre
+    var parent = $(obj).parents('.form-group');
+    // Se remueven el icono y el mensaje de error
+    parent.find('.smk-success-msg, .smk-success-icon').remove();
+    // Se remueve la clase de error
+    parent.removeClass('has-success has-feedback');
+    // Se retorna false
+    return true;
   };
   /*
   |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
