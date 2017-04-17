@@ -1,18 +1,18 @@
-#ngScrollSpy
+# ngScrollSpy
 
-###What is it?
+### What is it?
 A continuation of a previous project of mine, [ngPagemenu](https://github.com/mg/ngPagemenu), that adds features such as more defined api to work with the scroll event and an affix directive.
 
-###What functionality does it provide?
+### What functionality does it provide?
 
 + *ScrollSpy*: a service that provides an saner api to work with the scroll event.
 + *affix*: a directive to affix an DOM element to a boundary of the browser window.
 + *pagemenu* and pageitems: two directives to build a menu from the contents in the page.
 
-###The ScrollSpy service
+### The ScrollSpy service
 The *ScrollSpy* service provides an api to work with the scroll event. It builds up the two following objects that represent the event:
 
-####The Scroll Data Object
+#### The Scroll Data Object
     {
         width,              // width of browser window
         height,             // height of browser window
@@ -27,7 +27,7 @@ The *ScrollSpy* service provides an api to work with the scroll event. It builds
         overscrollBottom    // did we overscroll to the bottom?
     }
 
-####The Scroll Delta Object
+#### The Scroll Delta Object
     {
         width,      // the difference in width from last scroll event
         height,     // the difference in height from last scroll event
@@ -40,7 +40,7 @@ The *ScrollSpy* service provides an api to work with the scroll event. It builds
     }
 The data is normalized, e.g. any overscroll data is removed and instead flags are added to the data. The velocity is calculated as poistion delta divided by window size, e.g. (curY - prevY) / height.
 
-#####Registering a scroll handler
+##### Registering a scroll handler
 
     ScrollSpy.addHandler(cond,handler) { return handler-id }:
     cond: function(ScrollData, ScrollDelta) { return true/false }
@@ -48,19 +48,19 @@ The data is normalized, e.g. any overscroll data is removed and instead flags ar
 
 A generic function to add a scroll handler. The *cond* function return true or false based on the data in the two parameters it receives. If the *cond* function returns true the handler get's called with the two objects. The addHandler function returns an id to the handler. Use the id to clean up once the handler is no longer needed. **In most cases you should not use this hook unless you need very special condition logic**.
 
-#####Cleanup on destory event
+##### Cleanup on destory event
 
     ScrollSpy.removeHandler(id):
 
 Remove handler. Use this to clean up once you don't need to receive the event any more.
 
-#####Trigger the scroll event
+##### Trigger the scroll event
 
     ScrollSpy.trigger(): 
 
 Use this function to programatically trigger a scroll event. Sets the property *isForced* to true while the event handlers are executed.
 
-#####Recieve all scroll events
+##### Recieve all scroll events
 
     ScrollSpy.onScroll(handler) { return handler-id }:
     
@@ -68,7 +68,7 @@ Use this function to programatically trigger a scroll event. Sets the property *
 
 Register a handler that receives all scroll events.
 
-#####Handling scrolling along single axis
+##### Handling scrolling along single axis
 
     ScrollSpy.onYScroll(handler) { return handler-id }:
     ScrollSpy.onXScroll(handler) { return handler-id }:
@@ -77,7 +77,7 @@ Register a handler that receives all scroll events.
 
 Register a handler to receive a scroll event along the Y axis or the X axis.
 
-#####Handling vertical overscroll
+##### Handling vertical overscroll
 
     ScrollSpy.onOverscrollVert(handler) { return handler-id }:
     ScrollSpy.onOverscrollTop(hatndler) { return handler-id }:
@@ -87,7 +87,7 @@ Register a handler to receive a scroll event along the Y axis or the X axis.
 
 Recieve overscroll events along the Y axis.
 
-#####Handling horizontal overscroll
+##### Handling horizontal overscroll
 
     ScrollSpy.onOverscrollHorz(handler) { return handler-id }:
     ScrollSpy.onOverscrollLeft(handler) { return handler-id }:
@@ -136,7 +136,7 @@ This will be mapped to the following tree:
     Item 6
         Item 7
 
-###How do I use it?
+### How do I use it?
 Install with bower:
 
     bower install ngScrollSpy --save
@@ -149,26 +149,26 @@ And add ngScrollSpy as a dependency for your app:
 
     angular.module('myApp', ['ngScrollSpy']);
 
-###Dependencies?
+### Dependencies?
 Only AngularJS.
 
-###Example?
+### Example?
 The *demo* directory contains three demo files:
 
 + *horz.html*: A demonstration of affixing a DOM element to either the left or the right edge of the window.
 + *vert.html*: A demonstration of affixing a DOM element to either the top or the bottom edge of the window.
 + *pagemenu.html*: A demonstration of a page menu.
 
-###Credits?
+### Credits?
 Aside for the Bootstrap people for the obvious inspiration, the pagemenu code was inspired by Evil Closet Monkey's answer to a question on [StackExchange](http://stackoverflow.com/questions/17470370/how-to-implement-a-scrollspy-in-angular-js-the-right-way).
 
-###And you are?
+### And you are?
 Magnús Örn Gylfason, a web programmer working in the banking industry in Iceland. You can contact me at
 
 + Twitter: [@mgns74](https://www.twitter.com/mgns74)
 + Google+: [Magnús Örn Gylfason](https://plus.google.com/u/0/+MagnúsÖrnGylfason/posts)
 
-###Licence
+### Licence
 The MIT License (MIT)
 
 Copyright (c) 2014 Magnús Örn Gylfason
