@@ -1,4 +1,4 @@
-#[Smoke](http://alfredobarron.github.io/smoke)
+# [Smoke](http://alfredobarron.github.io/smoke)
 
 ![Version](https://img.shields.io/github/release/alfredobarron/smoke.svg)
 ![Version](https://img.shields.io/bower/v/smoke.svg)
@@ -41,17 +41,17 @@ Read the [Getting started page](http://alfredobarron.github.io/smoke/#/getting-s
 
 
 
-##Required
+## Required
 
 Smoke plugin requires the [Jquery](http://jquery.com/) library and [Bootstrap 3.](http://getbootstrap.com/) framework.
 
 
 
-##Documentation
+## Documentation
 
 Documentation can check the [http://alfredobarron.github.io/smoke/](http://alfredobarron.github.io/smoke/)
 
-##How to contribute
+## How to contribute
 
 All contributions are very welcome, We love it. There are several ways to help out:
 
@@ -66,19 +66,19 @@ There are a few guidelines that we need contributors to follow so that we have a
 If you want to making changes Better avoid working directly on the master branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/alfredobarron/smoke/tree/dev), into folder `docs/src/`.
 
 
-##Community
+## Community
 
 - Join [the official Slack room](https://smokejs.slack.com).
 - Implementation help may be found at Stack Overflow (tagged [`smoke`](http://stackoverflow.com/questions/tagged/smoke)).
 
 
-##Creators
+## Creators
 
 [@AlfredoBarronC](https://twitter.com/AlfredoBarronC)
 
 
 
-##Collaborators
+## Collaborators
 
 - [@misaelrojas](https://github.com/misaelrojas)
 - [@mostrosonido](https://twitter.com/mostrosonido)
@@ -93,6 +93,6 @@ If you want to making changes Better avoid working directly on the master branch
 
 
 
-##Copyright and license
+## Copyright and license
 
 Code and documentation (c) Copyright 2015 Alfredo Barron. Code published under [license LGPL](https://github.com/alfredobarron/smoke/blob/master/LICENSE)
