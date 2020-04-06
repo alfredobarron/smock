@@ -181,10 +181,12 @@
 
             // Se valida el input NUMBER RANGE
             if ((typeof(smkMin) !== 'undefined' || typeof(smkMax) !== 'undefined')) {
-              if((value < smkMin) || (value > smkMax)){
+              var minNo = parseInt(smkMin);
+              var maxNo = parseInt(smkMax);
+              if((value < minNo) || (value > maxNo)){
                 var arrayTextNumberRange = [];
-                arrayTextNumberRange[0] = parseInt(smkMin-1);
-                arrayTextNumberRange[1] = parseInt(smkMax)+1;
+                arrayTextNumberRange[0] = minNo - 1;
+                arrayTextNumberRange[1] = maxNo + 1;
                 var textNumberRange = $.smokeCustomizeMsg(languaje.textNumberRange, arrayTextNumberRange);
                 // Se agrega el mensaje de error
                 result = $.smkAddError(input, textNumberRange);
